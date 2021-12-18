@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <br>
+    
+    <h3>Today Gold Rate</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" name="value1" id="rate" value="4530"/><br>
+    <h3>Total Weight</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" name="value1" id="weight" value="0"/><br>
+    <h3>Type of Jewel</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="value1" id="type" value="Ring"/><br>
+    <h3>Wastage in %</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" name="value1" id="wast" value="8"/><br>
+    <h3>GST in %</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="value1" id="gst" value="3"/><br>
+    
+    <h3>Total amount</h3>
+    <input type="button" name="click" id="click" value="Get Total" onclick="total();"/><br>
+
+ <script>
+     function total()
+     {
+         var rate, weight, wast, gst, type;
+         rate = (document.getElementById("rate").value);
+         weight = (document.getElementById("weight").value);
+         type = (document.getElementById("type").value);
+         wast = document.getElementById("wast").value;
+         gst = document.getElementById("gst").value;
+         
+
+      var a = document.write("The total rate of the "+weight+ "gram Gold "+type+   "Rate is"+(rate)*(+weight).toFixed(2));
+      var b = document.write("<br>The Wastage cost of the "+weight+ "gram Gold "+type+ "Rate is"+((rate)*(weight)*(+wast/100)).toFixed(2));
+      var c = document.write(" <br>The Gst cost of the "+weight+ "gram Gold "+type+ "Rate is"+((rate)*(weight)*(+gst/100)).toFixed(2));
+      
+
+      
+        
+     }
+    
+    
+    /*function cal()
+     {
+         var value1, value2, menu;
+
+         value1 = parseInt(document.getElementById("num1").value);
+         value2 = parseInt(document.getElementById("num2").value);
+         menu = parseInt(document.getElementById("menu1").value);
+    switch(menu)
+    {
+        case 1:
+            document.write("<br>Addition value:"+(value1/100);
+        case 2:
+        document.write("<br>Substraction value:"+(value1-value2));
+            break;
+        case 3:
+        document.write("<br>Substraction value:"+(value1*value2));
+            break;
+        case 4:
+        document.write("<br>Substraction value:"+(value1/value2));
+            break;
+        default:
+        document.write("<br>Not available");
+    }
+    }
+    
+     
+     /*var mark;                                                  //If Statement
+     mark=prompt("Enter the mark","60");
+     if(mark >=35)
+    {
+        document.write("Pass");
+    }
+    if(mark <=35)
+    {
+        document.write("Fail");
+    }
+     
+      <label for="name">Enter your name</label><input type="text" id="name" placeholder=" Enter name"><br><br>
+    <input type="number" placeholder="Enter Marks" id="mark"><br><br>
+    <input type="button" value="test" onclick="test();">
+    <label for="age">Enter your age</label><input type="number" id ="age" placeholder=" Enter age"><br><br>
+    <label for="nation">Enter your nationality</label><input type="text"  id="nation" placeholder=" Enter nationality"><br><br>
+    
+    <input type="button" value="submit" onclick="verify();">
+    <input type="button" value="check" onclick="check();">
+    <hr>
+    Enter Username
+    <input type="text" id="nme"> <br>
+    Enter Password
+    <input type="password" id="pwd"> 
+    <input type="button" value="login" onclick="login();">
+    ................................................................................................
+     
+     var age,permit;                                            //Example for Alert,Confirm,Prompt(Swimming class)
+    age=prompt("Enter the age to join a swinmming class", "8");
+    if(age<8)
+    {
+        permit=confirm("Do you get your parental control");
+        if(permit)
+        {
+            alert("Allowed to join a swinmming class");
+        }else
+        {
+            alert("Not allowed to join a swinmming class");
+        }
+
+    }else{
+        alert("Welcome to swinmming class");
+    }
+     var value=1996, flag;                                          //ALERT
+     alert("Welcome to our book shop opened in"+value);
+    */
+
+     /*flag=confirm("Do you want to get membership");               //CONFIRM
+     if(flag)
+     {
+         alert("Welcome to get attractive offers");
+     }
+     else
+     {
+         alert("Thank you and visit again");
+     }*/
+     /*var name1=prompt("Kindly enter your name for enroll", "Your Name");    //PTOMPT
+     if(name1!=null)
+     {
+         alert("Welcome Mr/Mrs" +name1+ "and for get offers");
+     }
+     else
+     {
+         alert("Thank you and visit again");
+     }
+     
+     function test()                                                //Ternary Operator
+     {
+     var name = document.getElementById("name").value;
+     var mark = document.getElementById("mark").value;
+     (mark>35)?document.write(name+ "Pass"):document.write(name+ "Fail");*/
+
+    
+     /*var num1=11, num2=3, value1, value2, value3=0;
+
+     value1 = num1.toString(2);
+     value2 = num2.toString(2);
+     document.writeln("string value is" +value1);
+     document.writeln("string value is" +value2);
+     value3=num1 & num2;
+     document.write("AND result of (11 and 3) is" +value3.toString(2) +'<br>');
+
+     value3=num1 | num2;
+     document.write("OR result of (11 and 3) is" +value3.toString(2) +'<br>');
+
+     value3=num1 ^ num2;
+     document.write("XOR result of (11 and 3) is" +value3.toString(2) +'<br>');
+
+     value3=~num2;
+     document.write("XOR result of (11 and 3) is" +value3.toString(2) +'<br>');
+
+     value3=~num2;
+     document.write("Left shift of (num1 << 1 =" +(num1 << 1));*/
+    
+     /*function login()
+     {
+         var name=document.getElementById("nme").value;
+         var pwd=document.getElementById("pwd").value;
+         if((name=="Gold")||(name=="pandi"))
+         {
+             document.write("Login success");
+            
+         }
+         else
+         {
+             document.write("Login failed");
+         }
+         if(!(name==js))
+         {
+             document.write("Welcome to JS");
+         }
+         else
+         {
+             document.write("Enter a valid user name");
+         }
+
+     }
+     function check()
+     {
+        var length = '2';
+        var length1 = 2;
+        if(length==length1)
+        {
+            document.writeln("Both 2 and '2' are same");
+        }
+        else
+        {
+            document.writeln("Both 2 and '2' are not same");
+        }
+        if(length===length1)
+        {
+            document.writeln("Both 2 and '2' datatypes are same");
+        }
+        else{
+            document.writeln("Both 2 and '2' datatypes are not same");
+        }
+
+     }
+     function verify()
+{
+    var name=document.getElementById("name").value;
+    var age=document.getElementById("age").value;
+    var nation=document.getElementById("nation").value;
+    if(nation!="indian")
+    {   
+        
+        alert("only indian able to vote");
+    }
+    else
+
+        if(age>=18)
+        {
+            if(age == 18)
+            {
+                document.write("welcome to your firse vote");
+            }
+            document.writeln("eligible to vote");
+        }
+         
+        else if(age<18)
+        {
+            document.write("not eligible for vote");
+        }*/
+
+        
+    
+
+</script>
+</body>
+</html>

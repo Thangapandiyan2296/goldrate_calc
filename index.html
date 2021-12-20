@@ -14,7 +14,7 @@
 <body>
     <br>
     
-    <h1>&#128526;</h1><h3 class="fw-bold"> Today Gold Rate</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <h3 class="fw-bold"> Today Gold Rate</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="number" name="value1" id="rate" value="4530"/><br>
     <h3 class="fw-bold">Total Weight</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="number" name="value1" id="weight" value="0"/><br>
@@ -24,33 +24,101 @@
     <input type="number" name="value1" id="wast" value="8"/><br>
     <h3 class="fw-bold">GST in %</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="text" name="value1" id="gst" value="3"/><br>
-    <input type="button" class="btn btn-primary" name="click" value="Get The Result" onclick="total();">
+    <input type="button" class="btn btn-success" name="click" value="Get The Result" onclick="total();">
+    <hr>
+
+    <h3 class="fw-bold"> Enter the amount</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" name="value1" id="amount"/><br>
+    
+    <h3 class="fw-bold">Enter the today gold rate</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="value1" id="rate"/><br>
+    <h3 class="fw-bold">Enter the Wastage in Percentage(%)</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="number" name="value1" id="weight" value="0"/><br>
+    <h3 class="fw-bold">Type of Jewel</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="value1" id="type" value="Ring"/><br>
+    
+    <h3 class="fw-bold">GST in %</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="value1" id="gst" value="3"/><br>
+   
+    <input type="button" class="btn btn-success" name="click" value="Get The Result" onclick="calc();">
     
    
-
  <script>
+     
+
+    function open()
+    {
+        window.open("www.facebook.com");
+    }
+    function myWin()
+    {
+            mywin = window.open("width=200, height=300");
+    }
+
      function total()
      {
-         var rate, weight, wast, gst, type;
+         var rate, weight, wast, gst, type, a, b, c, res, amount;
          rate = (document.getElementById("rate").value);
          weight = (document.getElementById("weight").value);
          type = (document.getElementById("type").value);
          wast = document.getElementById("wast").value;
          gst = document.getElementById("gst").value;
          
-
-      var a = document.write("The Total amount of the "+weight+ ' '+ "gram Gold " +type+ " "  + "Rate is Rs."+ " "+(rate)*(+weight).toFixed(2));
-      var b = document.write("<br><br>The Wastage cost of the"+ " " +weight+ " " +"gram Gold"+ " " +type+ " " + "Rate is Rs." +" " +((rate)*(weight)*(+wast/100)).toFixed(2));
-      var c = document.write(" <br><br>The GST amount of the "+weight+ " "+ "gram Gold "+type+ " " +"Rate is Rs."+ " " +((rate)*(weight)*(+gst/100)).toFixed(2));
-      
-
-      
+         a = (rate*weight).toFixed(2);
+         parseInt(document.write("The Total amount of the "+weight+ ' '+ "gram Gold " +type+ " "  + "Rate is Rs."+ " "+ a ,"<br>"));
+         b = ((rate)*(weight)*(+wast/100)).toFixed(2);
+         document.write("<br><br>The Wastage cost of the"+ " " +weight+ " " +"gram Gold"+ " " +type+ " " + "Rate is Rs."+ b ,"<br>");
+         c = ((rate)*(weight)*(+gst/100)).toFixed(2);
+         document.write("<br><br>The GST amount of the "+weight+ " "+ "gram Gold "+type+ " " +"Rate is Rs."+ " "+ c ,"<br>");
+        res = ((+a)+(+b)+(+c)).toFixed(2);
+        res1 = document.write("<br> The Total amount is" +res);
+    
+    }
+    function calc()
+    {
+        var rate, weight, wast, gst, type, a, b, c, res;
+        amount = (document.getElementById("amount").value);
+         rate = (document.getElementById("rate").value);
+         weight = (document.getElementById("weight").value);
+         wast = document.getElementById("wast").value;
+         gst = document.getElementById("gst").value;
+         
+         a = (amount/rate).toFixed(3);
+         (document.write("The Total amount of the "+weight+ ' '+ "gram Gold " +type+ " "  + "Rate is Rs."+ " "+ a ,"<br>"));
+         b = (rate)*(weight)*(+wast/100).toFixed(2);
+         document.write("<br><br>The Wastage cost of the"+ " " +weight+ " " +"gram Gold"+ " " +type+ " " + "Rate is Rs."+ b ,"<br>");
+         c = ((rate)*(weight)*(+gst/100)).toFixed(2);
+         document.write("<br><br>The GST amount of the "+weight+ " "+ "gram Gold "+type+ " " +"Rate is Rs."+ " "+ c ,"<br>");
+         
+         //b = ((rate)*(weight)*(+wast/100)).toFixed(2);
+        // document.write("<br><br>The Wastage cost of the"+ " " +weight+ " " +"gram Gold"+ " " +type+ " " + "Rate is Rs."+ b ,"<br>");
+        // c = ((rate)*(weight)*(+gst/100)).toFixed(2);
+        // document.write("<br><br>The GST amount of the "+weight+ " "+ "gram Gold "+type+ " " +"Rate is Rs."+ " "+ c ,"<br>");
         
-     }
+        
+        
+         
+
+    }
+    
     
     
     /*function cal()
      {
+
+'use strict'
+      var x = 10;
+     document.write("<br>",x +"<br>");
+     var d = new Date();
+        document.write(d);
+        document.write("<br>" +d.getMonth());
+        document.write("<br>" +d.getDate());
+        document.write("<br>" +d.getFullYear());
+        document.write("<br>" +d.getMonth());
+        document.write("<br>" +d.getUTCDate());
+        document.write("<br>" +d.getUTCMilliseconds());
+        document.write("<br>" +d.getUTCHours());
+
          var value1, value2, menu;
 
          value1 = parseInt(document.getElementById("num1").value);
